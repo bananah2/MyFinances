@@ -44,7 +44,7 @@ def validate_client_create(client_details) -> str | None:
     if client_details.get("is_representative") and not client_details.get("company"):
         return "Please provide a company name if you are creating a representative"
 
-    if client_details.get("address") and not 3 < len(client_details.get("address")) < 84:
+    if client_details.get("address") and not 3 <= len(client_details.get("address")) <= 84:
         return "Please provide a valid address between 3 and 84 characters"
 
     return None
